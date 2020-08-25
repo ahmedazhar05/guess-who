@@ -594,6 +594,7 @@ window.onbeforeinstallprompt = e => {
 
 window.onappinstalled = evt => {
   installPrompt = null;
+  document.getElementById('app-installer').style.display = 'none';
   pop.blur();
   pop.innerText = 'App Installed!';
   pop.focus();
