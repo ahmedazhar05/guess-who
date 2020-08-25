@@ -586,7 +586,6 @@ function updateChats(tag, chat, received) {
 
 window.onbeforeinstallprompt = e => {
   e.preventDefault();
-	console.log(e);
   installPrompt = e;
 };
 
