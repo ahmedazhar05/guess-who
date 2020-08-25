@@ -1,6 +1,7 @@
 {
   "short_name": "Guess Who?",
   "description": "The Mystery Face Game",
+  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "assets/icon-192.png",
@@ -13,9 +14,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/guess-who/",
+  "start_url": "/guess-who/index.html",
   "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "/guess-who/",
   "theme_color": "#ff4500"
 }
