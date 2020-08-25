@@ -6,7 +6,7 @@
     url("//db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.woff") format("woff"),
     url("//db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.ttf") format("truetype"),
     url("//db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.svg#Cooper Black") format("svg");
-	font-display: swap;
+  font-display: swap;
 }
 @font-face {
   font-family: "DebsW00-WideBlack";
@@ -16,7 +16,7 @@
     url("//db.onlinewebfonts.com/t/f889e6a4cbdec6924bcbe824199374a8.woff") format("woff"),
     url("//db.onlinewebfonts.com/t/f889e6a4cbdec6924bcbe824199374a8.ttf") format("truetype"),
     url("//db.onlinewebfonts.com/t/f889e6a4cbdec6924bcbe824199374a8.svg#DebsW00-WideBlack") format("svg");
-	font-display: swap;
+  font-display: swap;
 }
 body{margin: 0px}
 body, .container{
@@ -146,7 +146,8 @@ div#app-installer {
   font-family: Helvetica;
   color: forestgreen;
   text-transform: uppercase;
-	display: none;
+  display: none;
+  cursor: pointer;
 }
 div#app-installer::first-letter {font-size: 1.3e}
 .btn{
