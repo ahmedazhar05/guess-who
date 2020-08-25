@@ -1,18 +1,18 @@
 const filesToCache = [
-	//'./',
-	'index.html',
-	'style.css',
-	'script.js',
-	'favicon.ico',
-	'assets/full.jpeg',
-	'assets/transparent.jpeg',
-	'assets/icon-192.png',
-	'assets/icon-512.png',
-	'assets/ding.mp3',
-	'assets/flip.mp3',
-	'assets/sent.mp3',
-	'assets/failure.mp3',
-	'assets/victory.mp3',
+	'/guess-who/',
+	'/guess-who/index.html',
+	'/guess-who/style.css',
+	'/guess-who/script.js',
+	'/guess-who/favicon.ico',
+	'/guess-who/assets/full.jpeg',
+	'/guess-who/assets/transparent.jpeg',
+	'/guess-who/assets/icon-192.png',
+	'/guess-who/assets/icon-512.png',
+	'/guess-who/assets/ding.mp3',
+	'/guess-who/assets/flip.mp3',
+	'/guess-who/assets/sent.mp3',
+	'/guess-who/assets/failure.mp3',
+	'/guess-who/assets/victory.mp3',
 ];
 const cacheName = 'game-cache-v1';
 
@@ -26,17 +26,17 @@ self.oninstall = event => {
 };
 
 self.onactivate = event => {
-  const cacheAllowlist = [cacheName];
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (cacheAllowlist.indexOf(cacheName) === -1)
-            return caches.delete(cacheName);
-        })
-      );
-    })
-  );
+	const cacheAllowlist = [cacheName];
+	event.waitUntil(
+		caches.keys().then(cacheNames => {
+			return Promise.all(
+				cacheNames.map(cacheName => {
+					if (cacheAllowlist.indexOf(cacheName) === -1)
+						return caches.delete(cacheName);
+				})
+			);
+		})
+	);
 };
 
 self.onfetch = event => {
@@ -53,9 +53,9 @@ self.onfetch = event => {
 					return response;
 				});
 			});
-    })
-    .catch(error => {
-    	console.log('Error Fetching Files!', 'Error:', error);
-    })
-  );
+		})
+		.catch(error => {
+			console.log('Error Fetching Files!', 'Error:', error);
+		})
+	);
 };
