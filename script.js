@@ -17,7 +17,9 @@ function lengthfy(v){
 }
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./service-worker.js')
+  navigator.serviceWorker.register('/guess-who/service-worker.js', {
+    scope: '/guess-who/'
+  })
   .then(reg => {
     console.log('WebApp registered!', 'scope:', reg.scope);
   })
