@@ -587,9 +587,13 @@ function updateChats(tag, chat, received) {
 window.onbeforeinstallprompt = e => {
   e.preventDefault();
   installPrompt = e;
+  const i = document.getElementById('app-installer');
+  i.onclick = () => {e.prompt()};
+  i.style.display = 'block';
 };
 
 window.onappinstalled = evt => {
+  installPrompt = null;
   pop.blur();
   pop.innerText = 'App Installed!';
   pop.focus();
