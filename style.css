@@ -136,6 +136,16 @@ body, .container{
   position: relative;
   padding: 0 15px;
 }
+div#app-installer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  font-family: Helvetica;
+  color: forestgreen;
+  text-transform: uppercase;
+}
+div#app-installer::first-letter {font-size: 1.3e}
 .btn{
   padding: 10px 0;
   width: calc(100% / 3);
