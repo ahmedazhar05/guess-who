@@ -141,15 +141,19 @@ body, .container{
 div#app-installer {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  padding: 20px 0;
+  left: 0;
+  right: 0;
+  width: max-content;
+  padding: 20px;
   font-family: Helvetica;
   color: forestgreen;
   text-transform: uppercase;
   display: none;
   cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
 }
-div#app-installer::first-letter {font-size: 1.3em}
+div#app-installer::first-letter {font-size: 1.2em}
 .btn{
   padding: 10px 0;
   width: calc(100% / 3);
