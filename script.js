@@ -11,6 +11,7 @@ var pop = document.querySelector('#popup');
 var faces = ["Alex", "Alfred", "Anita", "Anne", "Bernard", "Bill", "Charles", "Claire", "David", "Eric", "Frans", "George", "Herman", "Joe", "Maria", "Max", "Paul", "Peter", "Philip", "Richard", "Robert", "Sam", "Susan", "Tom"];
 var flipPaused = false;
 var fl = document.querySelector('#flip.sound');
+let installPrompt;
 
 function lengthfy(v){
   return "0000".slice((v+"").length) + v;
@@ -149,6 +150,11 @@ board.onclick = e => {
               g.style.opacity = 0;
               document.getElementById('over').style.opacity = 1;
               setTimeout(() => {g.style.display = 'none';}, 500);
+              setTimeout(() => {
+                dialog('Install App', 'Would you like to install this app to your device?', b => {
+                  if(b) installPrompt.prompt();
+                });
+              }, 2000);
               window.onbeforeunload = e => {delete e['returnValue']};
             }
           });
@@ -449,9 +455,16 @@ var message = e => {
         document.querySelector('#victory.sound').play();
         document.getElementById('result').innerText = 'YOU WON';
         document.getElementById('reason').innerText = 'Your Opponent Failed to correctly guess your Mystery Person'+(level > 1 ? 's':'');
-      }
+      }      
       g.style.opacity = 0;
       setTimeout(() => {g.style.display = 'none';}, 500);
+      
+      setTimeout(() => {
+        dialog('Install App', 'Would you like to install this app to your device?', b => {
+          if(b) installPrompt.prompt();
+        });
+      }, 2000);
+      
       window.onbeforeunload = e => {delete e['returnValue']};
       break;
     case 'msg':
@@ -536,6 +549,17 @@ function updateChats(tag, chat, received){
   setTimeout(() => {wp.lastElementChild.innerText = chat;}, 100);
   wp.scroll(0, wp.scrollHeight);
 }
+
+window.onbeforeinstallprompt = e => {
+  e.preventDefault();
+  installPrompt = e;
+});
+
+window.onappinstalled = evt => {
+	pop.blur();
+	pop.innerText = 'App Installed!';
+	pop.focus();
+});
 
 window.onclose = window.onunload = () => {
   if(socket){
