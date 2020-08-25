@@ -553,13 +553,13 @@ function updateChats(tag, chat, received){
 window.onbeforeinstallprompt = e => {
   e.preventDefault();
   installPrompt = e;
-});
+};
 
 window.onappinstalled = evt => {
 	pop.blur();
 	pop.innerText = 'App Installed!';
 	pop.focus();
-});
+};
 
 window.onclose = window.onunload = () => {
   if(socket){
