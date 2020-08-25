@@ -19,7 +19,7 @@ function lengthfy(v){
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./service-worker.js')
   .then(reg => {
-    console.log('WebApp registered!');
+    console.log('WebApp registered!', 'scope:', reg.scope);
   })
   .catch(error => {
     console.log('WebApp failed to register!', 'Error:', error);
