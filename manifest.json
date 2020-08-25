@@ -13,9 +13,9 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "./",
+  "start_url": "/guess-who/",
   "background_color": "#ffffff",
   "display": "standalone",
-  "scope": "./",
+  "scope": "/guess-who/",
   "theme_color": "#ff4500"
 }
