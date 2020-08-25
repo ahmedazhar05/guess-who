@@ -149,7 +149,7 @@ div#app-installer {
   display: none;
   cursor: pointer;
 }
-div#app-installer::first-letter {font-size: 1.3e}
+div#app-installer::first-letter {font-size: 1.3em}
 .btn{
   padding: 10px 0;
   width: calc(100% / 3);
