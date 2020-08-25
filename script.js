@@ -150,11 +150,13 @@ board.onclick = e => {
               g.style.opacity = 0;
               document.getElementById('over').style.opacity = 1;
               setTimeout(() => {g.style.display = 'none';}, 500);
-              setTimeout(() => {
-                dialog('Install App', 'Would you like to install this app to your device?', b => {
-                  if(b) installPrompt.prompt();
-                });
-              }, 2000);
+							if(installPrompt){
+								setTimeout(() => {
+									dialog('Install App', 'Would you like to install this app to your device?', b => {
+										if(b) installPrompt.prompt();
+									});
+								}, 2000);
+							}
               window.onbeforeunload = e => {delete e['returnValue']};
             }
           });
@@ -458,13 +460,13 @@ var message = e => {
       }      
       g.style.opacity = 0;
       setTimeout(() => {g.style.display = 'none';}, 500);
-      
-      setTimeout(() => {
-        dialog('Install App', 'Would you like to install this app to your device?', b => {
-          if(b) installPrompt.prompt();
-        });
-      }, 2000);
-      
+			if(installPrompt){
+				setTimeout(() => {
+					dialog('Install App', 'Would you like to install this app to your device?', b => {
+						if(b) installPrompt.prompt();
+					});
+				}, 2000);
+			}      
       window.onbeforeunload = e => {delete e['returnValue']};
       break;
     case 'msg':
