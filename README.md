@@ -24,5 +24,5 @@ First one to _Correctly Guess_ the Mystery Face(s) Wins.
 [Twitter](https://twitter.com/ahmedazhar05), 
 [Facebook](https://facebook.com/ahmedazhar05)
 
-
+---
 _Feel free to fork the repository and issue pull requests._
