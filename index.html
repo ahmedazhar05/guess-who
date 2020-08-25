@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Guess Who?</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+    <audio id="message" class="sound" src="assets/ding.mp3" type="audio/mpeg"></audio>
+    <audio id="sent" class="sound" src="assets/sent.mp3" type="audio/mpeg"></audio>
+    <audio id="flip" class="sound" src="assets/flip.mp3" type="audio/mpeg"></audio>
+    <audio id="victory" class="sound" src="assets/victory.mp3" type="audio/mpeg"></audio>
+    <audio id="failure" class="sound" src="assets/failure.mp3" type="audio/mpeg"></audio>
+    <div class="container">
+      <div id="over" class="bg">
+        <div id="over-bg">
+          <div id="result"></div>
+          <div id="reason"></div>
+          <div id="status">
+            <div id="self"></div>
+            <div id="opp"></div>
+          </div>
+          <button id="replay" class="btn">REPLAY</button>
+          <div id="links">
+            <div id="github" class="link">
+              <svg height="32" viewbox="0 0 16 16" version="1.1" width="32" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="game" class="bg waiting">
+        <div id="board" class="selection"></div>
+        <div id="chatbox" tabindex="18">
+          <span id="slider"></span>
+          <div id="chat-container"></div>
+        </div>
+        <div id="chatbar" class="response disabled">
+          <div id="chat-text" contenteditable="true"></div>
+          <div id="binary">
+            <span></span><span></span>
+          </div>
+        </div>
+        <div id="card-btn"></div>
+        <div id="my-cards"></div>
+      </div>
+      <div id="user" class="bg">
+        <div id="uname" class="tab">
+          <h1>Enter Your Username</h1>
+          <input type="text" placeholder="username">
+          <hr>
+          <button class="continue disabled">Continue</button>
+        </div>
+      </div>
+      <div id="lobby" class="bg">
+        <div>
+          <button id="invite" class="btn">Invite</button>
+          <button id="connect" class="btn">Connect</button>
+        </div>
+        <div id="connect-tab" class="tab">
+          <h1>Enter Game ID</h1>
+          <input type="number" min="1" max="9999" id="gameid" maxlength="4" placeholder="0000">
+          <hr>
+          <h1>Or join a player from Lobby</h1>
+          <div id="player-container"></div>
+          <hr>
+          <button class="continue disabled">Continue</button>
+        </div>
+        <div id="invite-tab" class="tab">
+          <h1>Invite Friends to this Game ID</h1>
+          <div>
+            <input type="number" min="1" max="9999" maxlength="4" disabled>
+            <svg width="54" height="61" viewbox="-4 0 90 90" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <title>Share Icon</title>
+                <line stroke-linecap="null" stroke-linejoin="null" id="svg_5" y2="15.5" x2="65.5" y1="45.49437" x1="15.24534" fill-opacity="null" stroke-opacity="null" stroke-width="7.5" stroke="#6495ed" fill="none" />
+                <line stroke-linecap="null" stroke-linejoin="null" id="svg_6" y2="75.5" x2="65.5" y1="45.49437" x1="15.49531" fill-opacity="null" stroke-opacity="null" stroke-width="7.5" stroke="#6495ed" fill="none" />
+                <ellipse stroke="#6495ed" ry="15" rx="15" id="svg_1" cy="15.5" cx="65.5" fill="#6495ed" />
+                <ellipse stroke="#6495ed" ry="15" rx="15" id="svg_3" cy="45.5" cx="15.5" fill="#6495ed" />
+                <ellipse stroke="#6495ed" ry="15" rx="15" id="svg_4" cy="75.5" cx="65.5" fill="#6495ed" />
+              </g>
+            </svg>
+          </div>
+          <hr>
+          <div>
+            <h1>Mode:</h1>
+            <div id="radio-container">
+              <label>
+                <input type="radio" value="1" name="mp">
+                <span>Normal</span>
+              </label><label>
+                <input type="radio" value="2" name="mp">
+                <span>Challenge</span>
+              </label>
+            </div>
+          </div>
+          <hr>
+          <button class="continue disabled">Continue</button>
+        </div>
+        <div id="instruction-tab" class="tab active">
+          <h2>Objective</h2>
+          Guess your opponent's Mystery Person before your opponent guesses yours.
+          <h2>Instructions</h2>
+          <h3>Your Object:</h3>
+          Your object is to guess your opponent's Mystery Person's face by asking one question per turn, and flipping any gameboard faces that don't fit the Mystery Person's description.
+          <h3>The Gameboard Faces:</h3>
+          Notice the differences among the 24 faces on your gameboard. Hair and eye colors are different; some faces have rosy cheeks, beards, mustaches, or big noses; some are wearing hats or glasses, As you play, you'll notice several other differences among the gameboard faces.
+          <h3>Your Turn:</h3>
+          On your turn, you may either ask a question, or declare your guess(Final Move) to who the Mystery Person is. You will be allowed to make a guess only when the last face (or last two faces if Challenge Mode) is/are left unflipped. But don't use your turn to guess the Mystery Person until you're ready! If your guess is wrong, you'll lose the game! Rules for asking questions and guessing the Mystery Person are explained below.
+          <h3>Asking Questions:</h3>
+          Until you're ready to guess who the Mystery Person is, ask your opponent one question per turn. Each question must have either a "Yes" or a "No" answer. For example, you may ask: "Does your person have white hair?. Your opponent must then answer either "Yes" or "No". After your opponent answers, you may be able to eliminate one or more gameboard faces. For example, if the Mystery Person has white hair, flip down all the faces that have black brown, red and yellow hair. This leaves only the white-haired people as the possible Mystery Person. After you ask a question (and flip down any faces you can), your turn is over.
+          <h3>Guessing the Mystery Person:</h3>
+          When you're ready to guess who the Mystery Person is, make your guess on your turn, instead of asking a question. To guess the face of your opponent's Mystery Person, you should have all the card faces flipped down and only your Guess of your opponent's card (or two cards if Challenge Mode) face stays unflipped. If your guess is right you win the game! If it's wrong, you lose.
+          <h2>How to Win</h2>
+          Players alternate turns asking questions until one player makes a guess(Final Move). If you guess correctly — or your opponent guesses incorrectly — you win the game!
+          <h2>Challenge Mode</h2>
+          For an extra challenge, both players should choose two Mystery card faces as their Mystery Persons. Your object is to guess who both of your opponent's Mystery People are!
+          You must say "both" or "either" when asking questions about the Mystery People. For example, you may ask, "Do both of your people wear glasses?" or, "Does either of your people have black hair?" Be very careful when eliminating gameboard faces — and remember which questions you've asked! For example, you ask: "Does either of your people have a beard?" Your opponent answers "Yes." You cannot flip down any faces because although one Mystery Person definitely has a beard, the other one may not! To guess the Mystery People correctly, you must guess who both of them are on the same turn.
+          <!--h2>Championship Game</h2>
+          If you wish to play a series of games, slide the score keeper up one point for every game you win. The first player to win five games is the Champion!-->
+        </div>
+      </div>
+      <div id="splash" class="bg">
+        <div id="logo">
+          <span class="inline">Guess Who?</span>
+          <span class="outline">Guess Who?</span>
+        </div>
+        <div class="description">The Mystery Face Game</div>
+        <button id="start" class="btn">START</button>
+      </div>
+    </div>
+    <div id="popup" tabindex="50"></div>
+    <div id="dialog" tabindex="51">
+      <div class="overlay"></div>
+      <span class="option">YES</span>
+      <span class="option">NO</span>
+      <span class="message"></span>
+    </div>
+    <script src="script.js"></script>
+  </body>
+
+</html>
