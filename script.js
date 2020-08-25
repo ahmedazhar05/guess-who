@@ -16,6 +16,16 @@ function lengthfy(v){
   return "0000".slice((v+"").length) + v;
 }
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+  .then(reg => {
+    console.log('WebApp registered!');
+  })
+  .catch(error => {
+    console.log('WebApp failed to register!', 'Error:', error);
+  });
+}
+
 function dialog(title, message, callback, isNote=false){
   var d = document.getElementById('dialog');
   if(isNote)
