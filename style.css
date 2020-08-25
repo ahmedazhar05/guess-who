@@ -123,6 +123,7 @@ body, .container{
 #logo span.outline{
   font-weight: bold;
   color: white;
+  position: relative;
 }
 #logo > span{padding: 0 50px}
 .description{
