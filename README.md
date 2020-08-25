@@ -8,7 +8,7 @@ First one to _Correctly Guess_ the Mystery Face(s) Wins.
 ## Features
 - Multiplayer
 - Chatting
-- Common Lobby area where players can connect
+- Players can connect from common Lobby area
 - Two game modes - `Normal` and `Challenge`
 - Shareable game link
 - Chat History
