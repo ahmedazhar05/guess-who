@@ -37,7 +37,7 @@ self.onactivate = event => {
       );
     })
   );
-});
+};
 
 self.onfetch = event => {
 	event.respondWith(
