@@ -6,7 +6,7 @@
     url("//db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.woff") format("woff"),
     url("//db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.ttf") format("truetype"),
     url("//db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.svg#Cooper Black") format("svg");
-  font-display: swap;
+	font-display: swap;
 }
 @font-face {
   font-family: "DebsW00-WideBlack";
@@ -146,6 +146,7 @@ div#app-installer {
   font-family: Helvetica;
   color: forestgreen;
   text-transform: uppercase;
+	display: none;
 }
 div#app-installer::first-letter {font-size: 1.3e}
 .btn{
