@@ -543,7 +543,7 @@ div#dialog > span.option:active{
   background: forestgreen;
   color: white;
 }
-div#dialog > span.option:active {color: transparent}
+div#dialog.note > span.option:active {color: transparent}
 
 div#dialog.note > span:nth-of-type(1)::before {
   content: 'Okay';
