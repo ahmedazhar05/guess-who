@@ -120,8 +120,9 @@ body, .container{
 }
 #logo span.inline{
   color: crimson;
-  position: absolute;
-	text-shadow: 3px 3px white;
+  /*position: absolute;*/
+  position: relative;
+  text-shadow: 3px 3px white;
 }
 #logo span.outline{
   font-weight: bold;
