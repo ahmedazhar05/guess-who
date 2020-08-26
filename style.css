@@ -121,11 +121,13 @@ body, .container{
 #logo span.inline{
   color: crimson;
   position: absolute;
+	text-shadow: 3px 3px white;
 }
 #logo span.outline{
   font-weight: bold;
   color: white;
   position: relative;
+  display: none;
 }
 #logo > span{padding: 0 50px}
 .description{
