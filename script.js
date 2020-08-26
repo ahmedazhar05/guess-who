@@ -180,7 +180,7 @@ board.onclick = e => {
         fl = fl.cloneNode();
       fl.play();
     }
-  } else if (!flipPaused) {
+  } else if (!flipPaused && t != board) {
     const name = t.previousElementSibling.children[0].alt;
     // const name = t.previousElementSibling.innerText;
     if (p.classList.contains('selected')) {
