@@ -650,18 +650,17 @@ div#card-btn:active::before{background: red}
 
 div#card-btn:active + div#my-cards{bottom: 65px}
 
-div#my-cards{
-  width: 300px;
-  height: 222px;
-  bottom: -100%;
-  padding: 10px;
-  position: absolute;
-  left: 5px;
-  background: orangered;
-  /*background: #d69b37;*/
-  border-radius: 10px 10px 10px 0;
-  transition: bottom 0.5s;
-  display: flex;
+div#my-cards {
+    width: 300px;
+    height: 222px;
+    bottom: -100%;
+    padding: 10px;
+    position: absolute;
+    left: 5px;
+    background: #2aaf89;
+    border-radius: 10px 10px 10px 0;
+    transition: bottom 0.5s;
+    display: flex;
 }
 
 div#my-cards .avatar{
