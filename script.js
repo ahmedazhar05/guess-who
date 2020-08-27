@@ -94,7 +94,7 @@ var lobbymessage = e => {
     lobby[u.gameId] = u.username;
     document.getElementById('player-container').innerHTML += '<label><input type="radio" name="player" value="' + u.gameId + '" ' + ((params.has('id') && u.gameId == id) ? 'checked' : '') + '><span></span>' + u.username + '</label>';
   } else if (e.data.startsWith('ext:')) {
-    if (u.gameId + '' in lobby)
+    if (lobby && (u.gameId + '') in lobby)
       delete lobby[u.gameId];
     const i = document.querySelector('input[value="' + u.gameId + '"]');
     if (i) {
