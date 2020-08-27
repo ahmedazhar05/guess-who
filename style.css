@@ -152,7 +152,7 @@ div#app-installer {
     font-family: Helvetica;
     color: white;
     text-transform: uppercase;
-    /* display: none; */
+    display: none;
     cursor: pointer;
     text-align: center;
     margin: 0 auto;
