@@ -165,7 +165,7 @@ board.onclick = e => {
                   dialog('Install App', 'Would you like to install this app to your device?', b => {
                     if (b) installPrompt.prompt();
                   });
-                }, 2000);
+                }, 5000);
               }
               window.onbeforeunload = e => {
                 delete e['returnValue']
@@ -491,7 +491,7 @@ var message = e => {
           dialog('Install App', 'Would you like to install this app to your device?', b => {
             if (b) installPrompt.prompt();
           });
-        }, 2000);
+        }, 5000);
       }
       window.onbeforeunload = e => {
         delete e['returnValue']
