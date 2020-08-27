@@ -49,15 +49,16 @@ body, .container{
   max-width: 1000px;
 }
 
-.bg::before{
-  content: '.';
-  color: transparent;
-  /*user-select: none;*/
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to bottom, /*rgba(254,182,69,1)*/orange 0%, white 100%);
-  left: 0;
+.bg::before {
+    content: '.';
+    color: transparent;
+    /* user-select: none; */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#f65c51 30%, #e5243f);
+    /* background-image: linear-gradient(to bottom, orange 0%, white 100%); */
+    left: 0;
 }
 .bg.waiting{pointer-events: none}
 .bg.error::after{
@@ -111,18 +112,18 @@ body, .container{
   100% {content: 'Waiting in Lobby for Opponent To Connect   '}
 }
 #logo {
-  font-family: 'DebsW00-WideBlack';
-  font-size: 5em;
-  font-weight: normal;
-  /*user-select: none;*/
-  display: flex;
-  margin: 0 auto;
+    font-family: 'DebsW00-WideBlack';
+    font-size: 6em;
+    font-weight: bold;
+    /* user-select: none; */
+    display: flex;
+    margin: 0 auto;
 }
-#logo span.inline{
-  color: crimson;
-  /*position: absolute;*/
-  position: relative;
-  text-shadow: 3px 3px white;
+#logo span.inline {
+    color: #f7b15c;
+    /* position: absolute; */
+    position: relative;
+    text-shadow: 3px 3px darkslategrey;
 }
 #logo span.outline{
   font-weight: bold;
@@ -142,34 +143,35 @@ body, .container{
   padding: 0 15px;
 }
 div#app-installer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: max-content;
-  padding: 20px;
-  font-family: Helvetica;
-  color: forestgreen;
-  text-transform: uppercase;
-  display: none;
-  cursor: pointer;
-  text-align: center;
-  margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: max-content;
+    padding: 20px;
+    font-family: Helvetica;
+    color: white;
+    text-transform: uppercase;
+    /* display: none; */
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
 }
 div#app-installer::first-letter {font-size: 1.2em}
-.btn{
-  padding: 10px 0;
-  width: calc(100% / 3);
-  min-width: max-content;
-  border: outset 5px white;
-  background: radial-gradient(#ff8100, #ffc800);
-  font-size: x-large;
-  font-family: 'Cooper Black';
-  border-radius: 10px;
-  color: white;
-  /*user-select: none;*/
-  transition : font-size 0.1s;
-  outline: none;
+.btn {
+    padding: 10px 0;
+    width: calc(100% / 3);
+    min-width: max-content;
+    border: outset 5px white;
+    background: #2f5755;
+    /* background: radial-gradient(#ff8100, #ffc800); */
+    font-size: x-large;
+    font-family: 'Cooper Black';
+    border-radius: 10px;
+    color: white;
+    /* user-select: none; */
+    transition: font-size 0.1s;
+    outline: none;
 }
 .btn::before, .btn::after {
   content: ' ';
@@ -276,24 +278,27 @@ div#player-container input:checked + span {
 
 #connect{left: 0}
 #invite{right: 0}
-.tab{
-  display: block;
-  position: absolute;
-  top: 0;
-  background: white;
-  border-radius: 20px;
-  margin: 25px;
-  margin-bottom: 0;
-  outline: solid 1px gray;
-  outline-offset: -20px;
-  width: calc(100% - 110px);
-  height: calc(100% - 163.5px);
-  padding: 10px;
-  padding-top: 0;
-  text-align: justify;
-  overflow: auto;
-  border: 20px solid white;
-  font-family: Helvetica;
+.tab {
+    display: block;
+    position: absolute;
+    top: 0;
+    background: white;
+    /* border-radius: 20px; */
+    margin: 25px;
+    margin-bottom: 0;
+    outline: dashed 1px gray;
+    outline-offset: -20px;
+    width: calc(100% - 110px);
+    height: calc(100% - 163.5px);
+    padding: 10px;
+    padding-top: 0;
+    text-align: justify;
+    overflow: auto;
+    border: 20px solid;
+    border-image: linear-gradient(#4eece1, white) 1 round;
+    font-family: Helvetica;
+    color: black;
+    text-shadow: 1px 1px darkgrey;
 }
 .tab hr{
   border: 0.5px solid gray;
@@ -405,18 +410,18 @@ div#radio-container::before {
   background: cornflowerblue;
   color: white;
 }
-.tab button.continue{
-  background: forestgreen;
-  padding: 20px;
-  color: white;
-  font-size: 2em;
-  font-family: 'Cooper Black';
-  border-radius: 20px;
-  border: 7px outset lightgray;
-  min-width: 50%;
-  margin: 0 auto;
-  outline: none;
-  transition: font-size 0.1s;
+.tab button.continue {
+    background: mediumseagreen;
+    padding: 20px;
+    color: white;
+    font-size: 2em;
+    font-family: 'Cooper Black';
+    border-radius: 20px;
+    border: 7px outset lightgray;
+    min-width: 50%;
+    margin: 0 auto;
+    outline: none;
+    transition: font-size 0.1s;
 }
 .tab button.continue:active{
   border-style: inset;
@@ -735,18 +740,18 @@ div#binary span::before{
 div#binary span:first-child::before{content: 'Yes'}
 div#binary span:last-child::before{content: 'No'}
 
-div#board{
-  display: grid;
-  background-color: dodgerblue;
-  margin: 20px;
-  border-radius: 10px;
-  position: absolute;
-  width: calc(100% - 44px);
-  height: calc(100% * 7/8 - 24px);
-  /*border: 5px solid dodgerblue;*/
-  grid-gap: 2px;
-  /*grid-template-columns: auto auto auto auto auto auto auto auto;*/
-  padding: 2px;
+div#board {
+    display: grid;
+    background-color: #2f5755;
+    margin: 20px;
+    border-radius: 10px;
+    position: absolute;
+    width: calc(100% - 44px);
+    height: calc(100% * 7/8 - 24px);
+    /* border: 5px solid dodgerblue; */
+    grid-gap: 2px;
+    /* grid-template-columns: auto auto auto auto auto auto auto auto; */
+    padding: 2px;
 }
 
 div#board.selection > .card {opacity: 0.8}
