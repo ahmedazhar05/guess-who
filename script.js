@@ -121,7 +121,7 @@ for (var f of faces.map((a) => ({
   const col = [16, 224, 432];
   const w = [104, 104, 104, 111, 100, 104, 104, 104];
   /*const h = [192, 192, 192];*/
-  d.innerHTML += '<div class="card"><div class="inner"><div class="avatar"><img style="background-image: url(' + location.origin + location.pathname + '/assets/full.jpeg); width: ' + w[i] + 'px; height: ' + (192 - 40) + 'px; background-position: -' + row[i] + 'px -' + col[j] + 'px" src="' + location.origin + location.pathname + '/assets/transparent.jpeg" alt="' + f + '"></div><div class="cardback"><div class="logo">Guess Who?</div></div></div></div>';
+  d.innerHTML += '<div class="card"><div class="inner"><div class="avatar"><img style="background-image: url(' + location.origin + location.pathname + 'assets/full.jpeg); width: ' + w[i] + 'px; height: ' + (192 - 40) + 'px; background-position: -' + row[i] + 'px -' + col[j] + 'px" src="' + location.origin + location.pathname + '/assets/transparent.jpeg" alt="' + f + '"></div><div class="cardback"><div class="logo">Guess Who?</div></div></div></div>';
   document.getElementById('board').appendChild(d.firstElementChild);
 }
 
