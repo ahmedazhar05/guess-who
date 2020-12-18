@@ -14,7 +14,7 @@ const filesToCache = [
 	'/guess-who/assets/failure.mp3',
 	'/guess-who/assets/victory.mp3'
 ];
-const cacheName = 'game-cache-v1';
+const cacheName = 'game-cache-v2';
 
 self.oninstall = event => {
 	event.waitUntil(
