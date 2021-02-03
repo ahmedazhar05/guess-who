@@ -68,7 +68,7 @@ starter.onclick = () => {
   splash.style.opacity = 0;
   document.querySelector('.tab#invite-tab input').value = lengthfy(id);
   var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("GET", 'https://script.google.com/macros/s/AKfycbx6zxKKksTB9lgsWgbBcZ5OyOGyleHTcc0fOcg7sRjPUt5WXRaN/exec?id=10000');
+  xmlHttp.open("GET", 'https://script.google.com/macros/s/AKfycbxcAzr--9mhuSjYGcwUEsFCbqXjaA0d1yRdgI9h0bWphBhae_N7rs70Bg/exec?id=10000');
   xmlHttp.send(null);
   xmlHttp.onload = () => {
     lobbyws = new WebSocket(xmlHttp.responseText);
@@ -349,7 +349,7 @@ container.onclick = ev => {
       username: username
     }));
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", 'https://script.google.com/macros/s/AKfycbx6zxKKksTB9lgsWgbBcZ5OyOGyleHTcc0fOcg7sRjPUt5WXRaN/exec?id=' + id);
+    xmlHttp.open("GET", 'https://script.google.com/macros/s/AKfycbxcAzr--9mhuSjYGcwUEsFCbqXjaA0d1yRdgI9h0bWphBhae_N7rs70Bg/exec?id=' + id);
     xmlHttp.send(null);
     xmlHttp.onload = () => {
       socket = new WebSocket(xmlHttp.responseText);
@@ -451,7 +451,7 @@ var message = e => {
       break;
     case 'ext':
       var xmlHttp = new XMLHttpRequest();
-      xmlHttp.open("GET", 'https://script.google.com/macros/s/AKfycbx6zxKKksTB9lgsWgbBcZ5OyOGyleHTcc0fOcg7sRjPUt5WXRaN/exec?id=10000');
+      xmlHttp.open("GET", 'https://script.google.com/macros/s/AKfycbxcAzr--9mhuSjYGcwUEsFCbqXjaA0d1yRdgI9h0bWphBhae_N7rs70Bg/exec?id=10000');
       xmlHttp.send(null);
       xmlHttp.onload = () => {
         lobbyws = new WebSocket(xmlHttp.responseText);
