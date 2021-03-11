@@ -1,21 +1,21 @@
 @font-face {
   font-family: "Cooper Black";
-  src: url("db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.eot");
-  src: url("db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.eot?#iefix") format("embedded-opentype"),
-    url("db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.woff2") format("woff2"),
-    url("db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.woff") format("woff"),
-    url("db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.ttf") format("truetype"),
-    url("db.onlinewebfonts.com/t/3cc05eb29887891767af19710a02106d.svg#Cooper Black") format("svg");
+  src: url("assets/fonts/CooperBlack.eot");
+  src: url("assets/fonts/CooperBlack.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/CooperBlack.woff2") format("woff2"),
+    url("assets/fonts/CooperBlack.woff") format("woff"),
+    url("assets/fonts/CooperBlack.ttf") format("truetype"),
+    url("assets/fonts/CooperBlack.svg#Cooper Black") format("svg");
   font-display: swap;
 }
 @font-face {
   font-family: "DebsW00-WideBlack";
-  src: url("db.onlinewebfonts.com/t/f889e6a4cbdec6924bcbe824199374a8.eot");
-  src: url("db.onlinewebfonts.com/t/f889e6a4cbdec6924bcbe824199374a8.eot?#iefix") format("embedded-opentype"),
-    url("db.onlinewebfonts.com/t/f889e6a4cbdec6924bcbe824199374a8.woff2") format("woff2"),
-    url("db.onlinewebfonts.com/t/f889e6a4cbdec6924bcbe824199374a8.woff") format("woff"),
-    url("db.onlinewebfonts.com/t/f889e6a4cbdec6924bcbe824199374a8.ttf") format("truetype"),
-    url("db.onlinewebfonts.com/t/f889e6a4cbdec6924bcbe824199374a8.svg#DebsW00-WideBlack") format("svg");
+  src: url("assets/fonts/DebsW00-WideBlack.eot");
+  src: url("assets/fonts/DebsW00-WideBlack.eot?#iefix") format("embedded-opentype"),
+    url("assets/fonts/DebsW00-WideBlack.woff2") format("woff2"),
+    url("assets/fonts/DebsW00-WideBlack.woff") format("woff"),
+    url("assets/fonts/DebsW00-WideBlack.ttf") format("truetype"),
+    url("assets/fonts/DebsW00-WideBlack.svg#DebsW00-WideBlack") format("svg");
   font-display: swap;
 }
 body{margin: 0px}
