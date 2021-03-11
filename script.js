@@ -67,16 +67,14 @@ starter.onclick = () => {
   starter.style.marginTop = (window.innerHeight * 1.3) + 'px';
   splash.style.opacity = 0;
   document.querySelector('.tab#invite-tab input').value = lengthfy(id);
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("GET", 'https://script.google.com/macros/s/AKfycbxcAzr--9mhuSjYGcwUEsFCbqXjaA0d1yRdgI9h0bWphBhae_N7rs70Bg/exec?id=10000');
-  xmlHttp.send(null);
-  xmlHttp.onload = () => {
-    lobbyws = new WebSocket(xmlHttp.responseText);
-    lobbyws.onopen = () => {
-      lobbyws.send('new')
-    };
-    lobbyws.onmessage = lobbymessage;
-  };
+
+  fetch('https://script.google.com/macros/s/AKfycbxcAzr--9mhuSjYGcwUEsFCbqXjaA0d1yRdgI9h0bWphBhae_N7rs70Bg/exec?id=10000&state=none&url='+window.location.href)
+  .then(res => res.json())
+  .then(data => {
+    var fun = new Function("soc", data.script.join(';'));
+    fun(data.soc);
+  });
+    
   setTimeout(() => {
     splash.style.display = 'none';
     document.querySelector('.active.tab').style.zIndex = 3;
@@ -253,7 +251,7 @@ board.onclick = e => {
 };
 
 document.querySelector('#invite-tab svg').onclick = () => {
-  const url = 'https://editor.p5js.org/ahmedazhar05/present/zNUjM6Kw8?id=' + id;
+  const url = 'https://ahmedazhar05.github.io/guess-who?id=' + id;
   if (navigator.share) {
     navigator.share({
         title: 'Guess Who!',
@@ -348,14 +346,15 @@ container.onclick = ev => {
       gameId: id,
       username: username
     }));
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", 'https://script.google.com/macros/s/AKfycbxcAzr--9mhuSjYGcwUEsFCbqXjaA0d1yRdgI9h0bWphBhae_N7rs70Bg/exec?id=' + id);
-    xmlHttp.send(null);
-    xmlHttp.onload = () => {
-      socket = new WebSocket(xmlHttp.responseText);
-      socket.onopen = open;
-      socket.onmessage = message;
-    };
+
+
+    fetch('https://script.google.com/macros/s/AKfycbxcAzr--9mhuSjYGcwUEsFCbqXjaA0d1yRdgI9h0bWphBhae_N7rs70Bg/exec?id='+id+'&state=none&url='+window.location.href)
+    .then(res => res.json())
+    .then(data => {
+      var fun = new Function("soc", data.script.join(';'));
+      fun(data.soc);
+    });
+
     lobby = null;
   }
   if (ev.target.className == 'continue' && p.id == 'lobby') {
@@ -450,19 +449,15 @@ var message = e => {
       game.className = 'bg error';
       break;
     case 'ext':
-      var xmlHttp = new XMLHttpRequest();
-      xmlHttp.open("GET", 'https://script.google.com/macros/s/AKfycbxcAzr--9mhuSjYGcwUEsFCbqXjaA0d1yRdgI9h0bWphBhae_N7rs70Bg/exec?id=10000');
-      xmlHttp.send(null);
-      xmlHttp.onload = () => {
-        lobbyws = new WebSocket(xmlHttp.responseText);
-        lobbyws.onopen = () => {
-          lobbyws.send('rsp:' + JSON.stringify({
-            gameId: id,
-            username: username
-          }));
-        };
-        lobbyws.onmessage = lobbymessage;
-      };
+
+
+      fetch('https://script.google.com/macros/s/AKfycbxcAzr--9mhuSjYGcwUEsFCbqXjaA0d1yRdgI9h0bWphBhae_N7rs70Bg/exec?id=10000&state=ext&url='+window.location.href)
+      .then(res => res.json())
+      .then(data => {
+        var fun = new Function("soc", data.script.join(';'));
+        fun(data.soc);
+      });
+
       document.getElementById('game').classList.add('waiting');
       document.getElementById('board').classList.add('selection');
       pop.innerText = opponent.username + ' left the game!';
